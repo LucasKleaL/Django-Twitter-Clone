@@ -131,7 +131,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['content']
+    fields = ['content', 'image']
     template_name = 'blog/post_new.html'
     success_url = '/'
 

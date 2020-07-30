@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container">
     <h3 class="white-important mb-3">
-        Post
+        Detalhes do Post
     </h3>
    <article class="media content-section">
         <div style="width: 100%; word-break: break-all;" class="hovered-tweet-comment">
@@ -49,7 +49,7 @@
     <div class="row pl-3">
         <div class="col-12 col-md-6 pl-0">
          <h3 class="white-important mb-3">
-             Comments
+             Comentários
          </h3>
         {% for comment in comments %}
             <article class="media content-section">
@@ -87,7 +87,7 @@
         {% if user is not None %}
             <div class="col-12 col-md-6 pl-0 pl-md-3 pr-3">
                 <h3 class="white-important mb-3">
-                    Add a comment
+                    Adicionar um comentário
                 </h3>
                 <form method="POST">
                     {% csrf_token %}
@@ -95,7 +95,7 @@
                         {{ form | crispy }}
                     </fieldset>
                     <div class="form-group">
-                        <button class="btn btn-outline-primary" type="submit">Submit comment</button>
+                        <button class="btn btn-outline-primary" type="submit">Enviar o comentário</button>
                     </div>
                 </form>
             </div>

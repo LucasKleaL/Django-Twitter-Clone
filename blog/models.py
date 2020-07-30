@@ -7,10 +7,12 @@ from django.urls import reverse
 
 class Post(models.Model):
     content = models.TextField(max_length=1000)
+    image = models.ImageField(upload_to='post_img', height_field=None, width_field=None, max_length=100)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    likes= models.IntegerField(default=0)
-    dislikes= models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
+    dislikes = models.IntegerField(default=0)
+    
 
     def __str__(self):
         return self.content[:5]
@@ -21,7 +23,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    content = models.TextField(max_length=150)
+    content = models.TextField(max_length=500)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     post_connected = models.ForeignKey(Post, on_delete=models.CASCADE)
